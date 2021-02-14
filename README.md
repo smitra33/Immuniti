@@ -1,3 +1,10 @@
+![Screen Shot 2021-02-14 at 9 26 12 AM](https://user-images.githubusercontent.com/60757186/107882615-9ac30d00-6ea7-11eb-863a-1420b73e291a.png)
+
+
+React Web Application that pulls from City of Calgary's Newsroom for Health-related Articles and to provide helpful health tips.
+Built with React js, Material-UI, Cron Intervals, Redis Database
+Deployment Coming Soon!
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
