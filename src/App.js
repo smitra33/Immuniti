@@ -1,23 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import Form from './form.js';
+import Weather from './Weather';
+import News from './News';
+
+const HEALTH_API_URL = '/api/health';
+
+async function fetchHealth(updateCb) {
+  const res = await fetch(HEALTH_API_URL);
+  const json = await res.json();
+
+  console.log({json});
+  updateCb(json);
+}
 
 function App() {
+
+//react hooks
+  const [newsList, updateHealth] = React.useState([]);
+  React.useEffect(() => {
+    fetchHealth(updateHealth);
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Weather/>
+      <News news = {newsList} />
+      <Form />
     </div>
   );
 }
